@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:description="Submit to CISCO REST endpoint"
+          jcr:primaryType="sling:Folder"
+          sling:resourceType="ciscoformspoc/components/submitactions/ciscorestendpoint"
+          sling:resourceSuperType="fd/af/components/guidesubmittype/restendpoint"
+          guideComponentType="fd/af/components/guidesubmittype"
+          submitService="CISCO_REST"
+          guideDataModel="basic,xfa,xsd"/>

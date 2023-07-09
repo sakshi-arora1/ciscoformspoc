@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/ciscoformspoc" mode="merge"/>
+    <filter root="/content/ciscoformspoc" mode="merge"/>
+    <filter root="/content/dam/ciscoformspoc" mode="merge">
+        <exclude pattern="/content/dam/ciscoformspoc(/.*)?"/>
+        <include pattern="/content/dam/ciscoformspoc/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/ciscoformspoc/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/ciscoformspoc" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-themes/ciscoformspoc" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-fdm/ciscoformspoc" mode="merge"/>
+    <filter root="/content/dam/ciscoformspoc/sample_logo.png" mode="merge"/>
+    <filter root="/content/dam/ciscoformspoc/sample_terms.png" mode="merge"/>
+    <filter root="/content/dam/ciscoformspoc/wknd_logo.png" mode="merge"/>
+    <filter root="/content/dam/ciscoformspoc/af_model_sample.json" mode="merge"/>
+</workspaceFilter>

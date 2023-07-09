@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/ciscoformspoc",
+        "create path (nt:unstructured) /content/dam/ciscoformspoc/jcr:content",
+        "set properties on /content/dam/ciscoformspoc/jcr:content\n  set cq:conf{String} to /conf/ciscoformspoc\n  set jcr:title{String} to \"cisco forms poc\"\nend"
+    ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit CISCO REST SUBMIT"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[af.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="CISCO REST SUBMIT"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <restEndpointPostUrl
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Enter the URL of a remote server as (http://&lt;host&gt;:&lt;port&gt;)."
+                fieldLabel="URL For POST request"
+                name="./ciscoRestEndpointPostUrl"/>
+        </items>
+    </content>
+</jcr:root>

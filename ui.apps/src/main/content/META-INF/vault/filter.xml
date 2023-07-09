@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/ciscoformspoc/clientlibs"/>
+    <filter root="/apps/ciscoformspoc/components"/>
+    <filter root="/apps/ciscoformspoc/i18n"/>
+    <filter root="/apps/fd/af/themes"/>
+</workspaceFilter>
