@@ -121,7 +121,7 @@ public class CISCOSubmitActionService implements FormSubmitActionService {
             }
         } catch (Exception e) {
             GuideSubmitUtils.addValidationErrorToResult(result, GuideSubmitErrorCause.FORM_SUBMISSION,
-                    StringUtils.isEmpty(e.getMessage()) ?"Failed to make REST call" : e.getMessage(),
+                    StringUtils.isEmpty(e.getMessage()) ? "Failed to make REST call" : e.getMessage(),
                     Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
             logger.error("[CISCO] [AF] [Submit] Failed to make REST call in form {}", formContainerResourcePath, e);
         } finally {
