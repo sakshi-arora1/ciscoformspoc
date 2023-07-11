@@ -88,6 +88,14 @@
                             <artifactId>core-forms-components-af-core</artifactId>
                             <target>/apps/ciscoformspoc-vendor-packages/application/install</target>
                         </embedded>
+						<embedded>
+                            <groupId>com.adobe.aem.guides</groupId>
+                            <artifactId>aem-guides-wknd.all</artifactId>
+                            <type>zip</type>
+                            <target>/apps/ciscoformspoc-vendor-packages/container/install</target>
+                            <filter>true</filter>
+                            <isAllVersionsFilter>true</isAllVersionsFilter>
+                        </embedded>
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -189,6 +197,12 @@
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
+		<dependency>
+            <groupId>com.adobe.aem.guides</groupId>
+            <artifactId>aem-guides-wknd.all</artifactId>
+            <version>2.1.4</version>
+            <type>zip</type>
+        </dependency>
         <dependency>
             <groupId>com.ciscoformspoc</groupId>
             <artifactId>ciscoformspoc.ui.apps</artifactId>
