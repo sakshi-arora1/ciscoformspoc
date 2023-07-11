@@ -543,24 +543,6 @@ Bundle-DocURL:
                 <artifactId>core.wcm.components.core</artifactId>
                 <version>${core.wcm.components.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.examples.ui.apps</artifactId>
-                <type>zip</type>
-                <version>${core.wcm.components.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.examples.ui.content</artifactId>
-                <type>zip</type>
-                <version>${core.wcm.components.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.examples.ui.config</artifactId>
-                <version>${core.wcm.components.version}</version>
-                <type>zip</type>
-            </dependency>
             <!-- AEM Forms Dependencies -->
                         <dependency>
                 <groupId>com.adobe.aem</groupId>
@@ -590,19 +572,6 @@ Bundle-DocURL:
                 <version>${core.forms.components.af.version}</version>
             </dependency>
 
-                        <dependency>
-                <groupId>com.adobe.aem</groupId>
-                <artifactId>core-forms-components-examples-apps</artifactId>
-                <type>zip</type>
-                <version>${core.forms.components.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.aem</groupId>
-                <artifactId>core-forms-components-examples-content</artifactId>
-                <type>zip</type>
-                <version>${core.forms.components.version}</version>
-            </dependency>
-            
 
             <!-- Testing -->
             <dependency>
