@@ -1,0 +1,35 @@
+input, optgroup, select, textarea {
+	margin: 10px 0 10px 0px !important;
+    padding-top: 5px !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #dbdbdb !important;
+    display: block;
+    width: 30%;
+}
+input[name='emailAddress']{
+    width: 93% !important;
+}
+input[type='radio'], input[type='checkbox']{
+	display: inline-block;
+    width: 2%;
+}
+
+.cmp-adaptiveform-button__text{
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    padding: 0 30px;
+    background: #009fe4;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 200;
+    opacity: 100% !important;
+}
+}
