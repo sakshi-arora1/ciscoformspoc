@@ -29,6 +29,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.ContentType;
@@ -47,6 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,6 +59,8 @@ import java.util.Map;
         immediate = true)
 public class CISCOSubmitActionService implements FormSubmitActionService {
     private static final String serviceName = "CISCO_REST";
+
+    private static final int TIMEOUT = 18000;
 
     protected static Logger logger = LoggerFactory.getLogger(CISCOSubmitActionService.class);
 
@@ -74,11 +78,16 @@ public class CISCOSubmitActionService implements FormSubmitActionService {
         ResourceResolver resourceResolver = formContainerResource.getResourceResolver();
         String formContainerResourcePath = formContainerResource.getPath();
 
+        RequestConfig.Builder requestBuilder = RequestConfig.custom();
+        requestBuilder.setConnectTimeout(TIMEOUT);
+        requestBuilder.setConnectionRequestTimeout(TIMEOUT);
+
         HttpClientBuilder httpClientBuilder = httpClientBuilderFactory.newBuilder();
+        httpClientBuilder.setDefaultRequestConfig(requestBuilder.build());
         try (CloseableHttpClient httpclient = httpClientBuilder.build()) {
             ValueMap properties = formContainerResource.getValueMap();
-            if (properties.get("ciscoRestEndpointPostUrl", (String) null) != null) {
-                String postUrl = properties.get("ciscoRestEndpointPostUrl", (String) null);
+            String postUrl = properties.get("ciscoRestEndpointPostUrl", (String) null);
+            if (postUrl != null) {
                 HttpPost httppost = new HttpPost(postUrl);
                 MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
                 ObjectMapper objectMapper = new ObjectMapper();
@@ -119,7 +128,7 @@ public class CISCOSubmitActionService implements FormSubmitActionService {
             } else {
                 logger.error("[CISCO] [AF] [Submit] CISCOSubmitActionService: Rest end point post URL is not set in form {}", formContainerResourcePath);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             GuideSubmitUtils.addValidationErrorToResult(result, GuideSubmitErrorCause.FORM_SUBMISSION,
                     StringUtils.isEmpty(e.getMessage()) ? "Failed to make REST call" : e.getMessage(),
                     Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
