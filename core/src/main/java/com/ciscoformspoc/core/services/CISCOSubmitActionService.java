@@ -78,15 +78,16 @@ public class CISCOSubmitActionService implements FormSubmitActionService {
         ResourceResolver resourceResolver = formContainerResource.getResourceResolver();
         String formContainerResourcePath = formContainerResource.getPath();
 
-        RequestConfig.Builder requestBuilder = RequestConfig.custom();
-        requestBuilder.setConnectTimeout(TIMEOUT);
-        requestBuilder.setConnectionRequestTimeout(TIMEOUT);
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectTimeout(TIMEOUT)
+                .setSocketTimeout(TIMEOUT)
+                .build();
 
         HttpClientBuilder httpClientBuilder = httpClientBuilderFactory.newBuilder();
-        httpClientBuilder.setDefaultRequestConfig(requestBuilder.build());
+        httpClientBuilder.setDefaultRequestConfig(requestConfig);
         try (CloseableHttpClient httpclient = httpClientBuilder.build()) {
             ValueMap properties = formContainerResource.getValueMap();
-            String postUrl = properties.get("ciscoRestEndpointPostUrl", (String) null);
+            String postUrl = properties.get("ciscoRestEndpointPostUrl", null);
             if (postUrl != null) {
                 HttpPost httppost = new HttpPost(postUrl);
                 MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
