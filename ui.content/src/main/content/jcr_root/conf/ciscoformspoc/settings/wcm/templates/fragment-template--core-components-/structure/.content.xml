@@ -5,13 +5,13 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:template="/conf/ciscoformspoc/settings/wcm/templates/fragment-template--core-components-"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="ciscoformspoc/components/page"
+        sling:resourceType="ciscoformspoc/components/adaptiveForm/page"
         guideComponentType="fd/af/templates">
         <guideContainer
             fd:type="fragment"
             fd:version="2.1"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ciscoformspoc/components/form/fragmentcontainer"
+            sling:resourceType="ciscoformspoc/components/adaptiveForm/fragmentcontainer"
             editable="{Boolean}true"
             fieldType="form"/>
         <cq:responsive jcr:primaryType="nt:unstructured">
