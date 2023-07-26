@@ -32,7 +32,26 @@ function elqSetCustomerGUID() {
     var elqCustomerGuid = elqGetCookieSubValue('ELOQUA', 'GUID');
     elqCustomerGuid = elqCustomerGuid == '' ? Date.now():elqCustomerGuid;
     if (elqCustomerGuid != null && elqCustomerGuid != '')
-        document.forms[0].elements['elqCustomerGUID'].value = elqCustomerGuid;
+        //document.forms[0].elements['elqCustomerGUID'].value = elqCustomerGuid;
+        $("input[name='elqCustomerGUID']").val(elqCustomerGuid);
     return;
 }
-window.onload = elqSetCustomerGUID;
+
+function setHiddenVars(){
+	var currentURL = window.location.host + window.location.pathname;
+    $("input[name='Landing_Page_ID_URL1']").val(currentURL);
+
+    var date = new Date();
+  	var mm = ('0' + (date.getMonth() + 1)).slice(-2);
+ 	var dd = ('0' + date.getDate()).slice(-2);
+ 	var yyyy = date.getFullYear();
+ 	var hh = ('0' + date.getHours()).slice(-2);
+ 	var min = ('0' + date.getMinutes()).slice(-2);
+ 	var ss = ('0' + date.getSeconds()).slice(-2);
+ 	var formattedDate = mm + '/' + dd + '/' + yyyy + ' ' + hh + ':' + min + ':' + ss;
+    $("input[name='FormSubmitDate']").val(formattedDate);
+}
+
+window.onload = elqSetCustomerGUID();
+window.onload = setHiddenVars();
+document.onload = handleDocumentLoad('form6750', '177775138');  
