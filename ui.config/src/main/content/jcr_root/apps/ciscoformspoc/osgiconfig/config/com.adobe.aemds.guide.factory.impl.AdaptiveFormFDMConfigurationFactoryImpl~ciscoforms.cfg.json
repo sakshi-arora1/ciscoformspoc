@@ -1,0 +1,4 @@
+{
+  "getContentPathPattern":"/content/forms/af/cisco-forms-poc/(.*)",
+  "getFormDataModelPathPattern":"/content/dam/formsanddocuments-fdm/ciscoformspoc/(.*)"
+}
